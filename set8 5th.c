@@ -15,6 +15,10 @@ int main()
         a[d-1]='*';
         a[d]='*';
     }
+    else
+    {
+        a[d]='*';
+    }
      printf("%s",a);   
     return 0;
 }
