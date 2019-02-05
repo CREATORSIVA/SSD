@@ -1,4 +1,4 @@
-
+printf("%d",ap);
 #include <stdio.h>
  
 int main()
