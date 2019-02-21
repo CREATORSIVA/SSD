@@ -1,41 +1,45 @@
-#include<stdio.h>
+#include <stdio.h>
 
 int main()
 
 {
 
-    int n,a[10],k,i,t;
+	int n,a[10],k,temp=0,i,j;
 
-    scanf("%d %d",&n,&k);
+	scanf("%d %d\n",&n,&k);
 
-    for(i=0;i<n;i++)
+	for(i=0;i<n;i++)
 
-    {
+	{
 
-        scanf("%d",&a[i]);
+	    scanf("%d",&a[i]);
 
-    }
+	}
 
-    for(i=0;i<k;i++)
+	for(i=0;i<k;i++)
 
-    {
+	{
 
-        t=a[i];
+	    temp=a[n-1];
 
-        a[i]=a[i+1];
+	    for(j=n-1;j>=0;j--)
 
-        a[i+1]=t;
+	    {
 
-    }
+	       a[j]=a[j-1];
 
-    for(i=0;i<n;i++)
+	    }
 
-    {
+	    a[0]=temp;
 
-        printf("%d ",a[i]);
+	}
 
-    }
+	for(i=0;i<n;i++)
 
-    return 0;
+	{
 
-}
+	    printf("%d ",a[i]);
+
+	}
+
+	}
