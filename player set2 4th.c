@@ -3,8 +3,8 @@
 int main()
 {
     
-    char a[60];
-    int n,i;
+    char a[60],b[80];
+    int n,i,j=0;
     scanf("%d",&n);
     for(i=0;i<n;i++)
     {
@@ -15,8 +15,11 @@ int main()
         
     if(a[i]!='a'&& a[i]!='e'&&a[i]!='i'&&a[i]!='o'&&a[i]!='u')
         {
-            printf("%c",a[i]);
+            b[j]=a[i];
+        j++;
         }
     }
-    return 0;
-}
+    for(i=j;i>=0;i--)
+    {
+        printf("%c",b[i]);
+    }
