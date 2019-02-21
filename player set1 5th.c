@@ -1,42 +1,41 @@
-#include<stdio.h>
-#include<string.h>
-
-int digitValue(char);
-
-int main(){
-
- char roman_Number[1000];
- int i=0;
- long int number =0;
-
- printf("Enter any roman number (Valid digits are I, V, X, L, C, D, M):  \n");
- scanf("%s",roman_Number);
- 
- while(roman_Number[i]){
- 
- if(digitValue(roman_Number[i]) < 0){
- printf("Invalid roman digit : %c",roman_Number[i]);
-return 0;
- }
- 
- if((strlen(roman_Number) -i) > 2){
-if(digitValue(roman_Number[i]) < digitValue(roman_Number[i+2])){
- printf("Invalid roman number");
- return 0;
+#include <stdio.h>
+int main(void) 
+{
+int n,i,res,a[20],t=0;
+char rn[10];
+scanf("%s",rn);
+ n=strlen(rn);
+for(i=0;i<n;i++)
+{
+if(rn[i]=='I')
+	a[i]=1;
+	else if(rn[i]=='V')
+	a[i]=5;
+	else if(rn[i]=='X')
+	a[i]=10;
+else if(rn[i]=='L')
+  a[i]=50;
+	else if(rn[i]=='C')
+	a[i]=100;
+	else if(rn[i]=='D')
+	a[i]=500;
+else
+  printf("\nINVALID");
 }
- }
+for(i=0;i<n;i+=2)
+{
+	if(a[i]<a[i+1])
+{
+		res=a[i+1]-a[i];	}
+	else 
+	{
+		res=a[i]+a[i+1];
+	}
+t=res+t;
+}
+printf("\n%d",t);
+return 0;
 
- if(digitValue(roman_Number[i]) >= digitValue(roman_Number[i+1]))
- number = number + digitValue(roman_Number[i]);
- else{
- number = number + (digitValue(roman_Number[i+1]) - digitValue(roman_Number[i]));
- i++;
- }
- i++;
- }
- 
- printf("Its decimal value is : %ld",number);
- 
- return 0;
+
 
 }
